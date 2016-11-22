@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Pure iClass</string>
+
+    <string name="welcome">© Pure i Consulting</string>
+
+    <string name="menu_title">Menu Title</string>
+    <string name="statistics">Summary: </string>
+    <string name="action_main">Home</string>
+    <string name="action_help">Help</string>
+    <string name="action_about">About</string>x
+
+    <string name="my_accessibility_service">com.pureiconsulting.mm/com.pureiconsulting.mm.NotificationService</string>
+    <string name="wechat_core_service">com.tencent.mm.booter.CoreService</string>
+
+    <string name="WEBVIEW_URL_KEY">webview_url</string>
+    <string name="WEBVIEW_LAYOUT_ID">webview_layout_id</string>
+    <string name="WEBVIEW_URL_MAIN">http://lab.pureiconsulting.com/iClass/teacher.html</string>
+    <string name="WEBVIEW_URL_ABOUT">file:///android_asset/about.html</string>
+    <string name="WEBVIEW_URL_HELP">file:///android_asset/help.html</string>
+    <string name="WEBVIEW_URL_COMING">file:///android_asset/coming.html</string>
+    <string name="WEBVIEW_URL_TEST">file:///android_asset/test.html</string>
+    <string name="WEBVIEW_URL_START">file:///android_asset/start.html</string>
+    <string name="WEBVIEW_URL_STUDENT">file:///android_asset/student.html</string>
+    <string name="WEBVIEW_URL_TEACHER">file:///android_asset/teacher.html</string>
+
+
+
+
+</resources>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-1.12.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="d3.v3.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="core.css">
+    <script src="core.js"></script>
+    <script src="student.js"></script>
+</head>
+
+<body>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-custom navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="start.html"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> Pure iClass - Student</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#" data-toggle="collapse" data-target="#challenge_list">
+                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> My question board</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" data-toggle="collapse" data-target="#help">
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help</a>
+                </li>
+                <li><a href="#" data-toggle="collapse" data-target="#about">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<script>
+
+
+</script>
+
+<!-- container -->
+<div class="container" id="pages">
+
+    <!-- Main component for a primary marketing message or call to action -->
+
+    <!-- main -->
+    <div id="main">
+    <div id="non_auth">
+    <form class="form-signin" id="authForm" onSubmit="return false;">
+        <h3 class="form-signin-heading">Please Sign in</h3>
+        <label for="auth_code" class="sr-only">Student ID</label>
+        <input type=text  class="form-control" id="auth_code" placeholder="Student ID" value="" required autofocus/>
+        <br>
+        <button class="btn btn-lg btn-success btn-block" type="submit" onClick="authorizePre(this.form)">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Sign in</button>
+    </form>
+        <div class="alert alert-info" role="alert">
+            <br>
+            <h4>Test Note:</h4>
+            <ul>
+                <li>Please use the one of the following student id: John, Julian, Wu.</li>
+                <li>You could use a new student ID to login as well.</li>
+                <li class="alert-warning">Not supported on ios Safari. </li>
+            </ul>
+        </div>
+    </div>
+    <div id="auth">
+   You logged in as <span id="user"></span>.
+        <button class='btn btn-default btn-sm' onClick="logout()">
+        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Log out
+        </button>
+        <hr>
+    </div>
+    </div>
+
+    <!-- end main -->
+
+    <div id="msg" class="text-warning"></div>
+
+    <!-- challenges -->
+    <div id="challenge_list" class="collapse" secure="true">
+        <h3>Question Board</h3>
+        Question on board is automatically synchronized with teacher's board.
+        <!-- button class='btn btn-success btn-sm' onClick='poll()'>
+            <span class='glyphicon glyphicon-refresh'></span>
+            Load Challenge Questions
+        </button -->
+        <!--
+        <div id="spinner"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span></div>
+        <button id="togglePollButton" class='btn btn-success btn-sm' onClick='togglePoll()' role='button'>Pause</button>
+        -->
+        <hr>
+        <div id="challenges"></div>
+    </div>
+
+    <!-- help -->
+    <div id="help" class="collapse">
+        <h3>Help</h3>
+        <p>
+            <h4>Step 1. </h4>
+            Use your student ID to login.
+        <h4>Step 2. </h4>
+        Follow prompt on your screen and respond to question by submitting your answers.
+
+        </p>
+    </div>
+
+    <!-- about -->
+    <div id="about" class="collapse">
+        <h3>About</h3>
+        <p>
+           <!-- This web app is developed by Pure i Consulting. -->
+        </p>
+    </div>
+
+</div> <!-- /container -->
+
+</body>
+
+</html>

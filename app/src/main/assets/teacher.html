@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-1.12.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="d3.v3.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="core.css">
+    <script src="core.js"></script>
+    <script src="teacher.js"></script>
+</head>
+
+<body>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-custom navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="start.html"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> Pure iClass - Teacher</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="javascript: getStudentsPre();" data-toggle="collapse" data-target="#students">
+                    <span class='glyphicon glyphicon-user'></span> Students</a>
+                </li>
+                <li><a href="#" data-toggle="collapse" data-target="#challenge_list">
+                    <span class='glyphicon glyphicon-cloud-download'></span> Questions</a>
+                </li>
+                <li><a href="#" data-toggle="collapse" data-target="#statistics_div">
+                    <span class='glyphicon glyphicon-signal'></span> Statistics</a>
+                </li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" data-toggle="collapse" data-target="#help">
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help</a>
+                </li>
+                <li><a href="#" data-toggle="collapse" data-target="#about">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+
+<!-- container -->
+<div class="container" id="pages">
+
+    <!-- main -->
+    <div id="main">
+        <div id="non_auth">
+            <form class="form-signin" id="authForm" onSubmit="return false;">
+                <h3 class="form-signin-heading">Please Sign in</h3>
+                <label for="auth_code" class="sr-only">Auth Code</label>
+                <input type=text  class="form-control" id="auth_code" placeholder="Auth Code" value="" required autofocus/>
+                <br>
+                <button class="btn btn-lg btn-info btn-block" type="submit" onClick="authorizePre(this.form)">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Sign in
+                </button>
+            </form>
+            <div class="alert alert-info" role="alert">
+                <br><h4>Test Note:</h4>
+                <ul>
+                    <li>Security hasn't been fully implemented.</li>
+                    <li>Please use any Auth Code to login. </li>
+                    <li class="alert-warning">Not supported on ios Safari. </li>
+                </ul>
+            </div>
+        </div>
+        <div id="auth">
+            You logged in as <span id="user"></span>.
+            <button class='btn btn-default btn-sm' onClick="logout()">
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Log out</button>
+            <hr>
+        </div>
+    </div> <!-- end main -->
+
+    <div id="msg" class="text-warning"></div>
+
+    <!-- statistics -->
+    <div id="statistics_div" class="collapse" secure="true">
+        <h3>Statistics</h3>
+        <button id="togglePollButton" class='btn btn-success btn-sm' onClick='togglePoll()' role='button'><span class='glyphicon glyphicon-signal'></span> Display Statistics</button>
+        <!--
+        <p><button class='btn btn-primary btn-sm' onClick='poll()' role='button'>
+            <span class='glyphicon glyphicon-signal'></span> Display Statistics
+        </button>
+        <button class='btn btn-warning btn-sm' onClick='pausePoll()' role='button'>Pause Sync</button>
+        -->
+        <div id="statistics" align="center"></div>
+
+    </div>
+
+    <!-- challenges -->
+    <div id="challenge_list" class="collapse" secure="true">
+        <h3>Questions</h3>
+        <p><button class='btn btn-success btn-sm' onClick='getChallengesForTeacher()' role='button'>
+            <span class='glyphicon glyphicon-cloud-download'></span> Load Questions
+        </button>
+        <button id="boardButton" class='btn btn-warning btn-sm' onClick='clearActiveChallengePre()' role='button'>
+            <span class='glyphicon glyphicon-unchecked'></span> Clear Question Board
+        </button>
+
+        <div id="challenges"></div>
+    </div>
+
+    <!-- student -->
+    <div id="students" class="collapse" secure="true">
+    </div>
+
+    <!-- help -->
+    <div id="help" class="collapse" secure="true">
+        <h3>Help</h3>
+        <p>
+        <h4>Step 1. </h4>
+        Use your student ID to login.
+        <h4>Step 2. </h4>
+        Follow prompt on your screen and respond to question by submitting your answers.
+
+        </p>
+    </div>
+
+    <!-- challenges -->
+    <div id="about" class="collapse">
+        <h3>About</h3>
+        <p>
+            <!-- This web app is developed by Pure i Consulting. -->
+        </p>
+    </div>
+
+</div>
+<!-- /container -->
+
+<script>
+$(function() {
+//alert('test');
+//poll();
+
+});
+</script>
+
+
+</body>
+
+</html>
